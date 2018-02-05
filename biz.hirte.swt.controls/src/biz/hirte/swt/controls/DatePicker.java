@@ -16,10 +16,11 @@ import org.eclipse.wb.swt.ResourceManager;
 
 /**
  * DatePicker renders a Textbox in readonly modus and a small Button (18x18) next to the Textbox on the right hand side.
- * The Button's Background is a Image that shows a calendar. A click on the Button will bring up a small Calendar with
+ * The button's background is an image that shows a calendar. A click on the button will bring up a small calendar with
  * the current date set. The users can pick a data. The chosen date is then propagated to the internal state 
- * of this Component and directly shown in the Textbox. 
+ * of this component and directly shown in the textbox. 
  * 
+ * @version 1.0
  * @author hirte
  *
  */
@@ -41,7 +42,7 @@ public class DatePicker extends CustomComponent<LocalDate> {
 		Button button = new Button(this, SWT.NONE);
 
 		FormData fd_text = new FormData();
-		fd_text.bottom = new FormAttachment(0, 21);
+		fd_text.bottom = new FormAttachment(100);
 		fd_text.top = new FormAttachment(0);
 		fd_text.left = new FormAttachment(0);
 		fd_text.right = new FormAttachment(button, -2);
@@ -66,7 +67,7 @@ public class DatePicker extends CustomComponent<LocalDate> {
 
 				setModel(dlg.open());
 
-				notifyValueChangeListener(getModel());
+				updateValueChangeListener(getModel());
 
 				updateText();
 			}
@@ -99,5 +100,10 @@ public class DatePicker extends CustomComponent<LocalDate> {
 	@Override
 	protected void checkSubclass() {
 		// Disable the check that prevents subclassing of SWT components
+	}
+
+	@Override
+	public void postConstruct() {
+		// TODO Auto-generated method stub
 	}
 }

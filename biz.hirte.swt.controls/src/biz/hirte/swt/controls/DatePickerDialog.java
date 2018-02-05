@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * Dialog that renders a small calendar (date picker). This Dialog doens't has
- * any border. So pretty much look like only the Calendar.
+ * any border. So it looks pretty much like only the Calendar.
  * 
  * @version 1.0
  * @author christoph.hirte@gmail.com

@@ -4,8 +4,9 @@ Bundle-Name: Controls
 Bundle-SymbolicName: biz.hirte.swt.controls
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: org.eclipse.swt;bundle-version="3.104.1",
+Require-Bundle: org.eclipse.swt,
  org.eclipse.osgi
-Import-Package: org.eclipse.core.runtime;version="3.5.0",
+Import-Package: org.eclipse.core.runtime,
  org.eclipse.jface.resource
 Export-Package: biz.hirte.swt.controls
+Bundle-Vendor: hirte.biz

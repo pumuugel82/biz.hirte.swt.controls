@@ -11,13 +11,13 @@ import org.eclipse.swt.widgets.Composite;
  * In this sense the CustomComponent has a model of type T that contains all the
  * data needed to render the component. And user interaction with the component should directly
  * reflect in changes to the model. Changes to the Model should then be forwarded to the 
- * {@link ValueChangeListener} via {@link #notifyValueChangeListener(Object)}.
+ * {@link ValueChangeListener} via {@link #updateValueChangeListener(Object)}.
  * 
  * @author hirte
  *
  * @param <T>
  */
-public class CustomComponent<T> extends Composite {
+public abstract class CustomComponent<T> extends Composite {
 
 	protected T model;
 
@@ -28,6 +28,8 @@ public class CustomComponent<T> extends Composite {
 		this.model = t;
 	}
 
+	public abstract void postConstruct();
+
 	public void addValueChangeListener(ValueChangeListener<T> listener) {
 		this.changeListener.add(listener);
 	}
@@ -36,7 +38,7 @@ public class CustomComponent<T> extends Composite {
 		this.changeListener.remove(l);
 	}
 
-	protected void notifyValueChangeListener(T t) {
+	protected void updateValueChangeListener(T t) {
 		this.changeListener.forEach(l -> l.valueChanged(t));
 	}
 
