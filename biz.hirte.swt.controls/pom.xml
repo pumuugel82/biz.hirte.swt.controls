@@ -39,9 +39,12 @@
 	</build>
 
 	<profiles>
-
+		
 		<profile>
 			<id>neon</id>
+			<activation>
+		        <activeByDefault>true</activeByDefault>
+		    </activation>
 			<repositories>
 				<repository>
 					<!-- Eclipse 4.6 -->

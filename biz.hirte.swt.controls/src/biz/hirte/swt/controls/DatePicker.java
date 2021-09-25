@@ -50,10 +50,10 @@ public class DatePicker extends CustomComponent<LocalDate> {
 		txtDate.setEditable(false);
 
 		FormData fd_button = new FormData();
-		fd_button.width = 18;
-		fd_button.height = 18;
+		fd_button.width = 20;
+		fd_button.height = 20;
 		fd_button.right = new FormAttachment(100);
-		fd_button.top = new FormAttachment(0, 2);
+		fd_button.top = new FormAttachment(0, 1);
 		button.setLayoutData(fd_button);
 		button.setSelection(true);
 		button.setImage(ResourceManager.getPluginImage("biz.hirte.swt.controls", "icon/calendar.png"));
